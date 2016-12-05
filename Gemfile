@@ -18,6 +18,7 @@ gem 'grape-swagger-rails'
 gem 'grape-jbuilder'
 
 gem 'natto'
+gem 'mecab', '0.996'
 
 group :development, :test do
   gem 'byebug', platform: :mri
