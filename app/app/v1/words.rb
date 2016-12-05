@@ -5,7 +5,7 @@ class V1::Words < V1::Base
 		params do
 			requires :sentence, type: String, desc: 'Sentence'
 		end
-		get do
+		get jbuilder: 'v1/words/index' do
 
 			words = []  
 
