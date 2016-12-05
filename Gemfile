@@ -17,6 +17,8 @@ gem 'grape-swagger'
 gem 'grape-swagger-rails'
 gem 'grape-jbuilder'
 
+gem 'natto'
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
