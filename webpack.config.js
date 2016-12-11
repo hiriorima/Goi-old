@@ -16,9 +16,22 @@ module.exports = {
       exclude: /(node_modules)/,
       query: {
         cacheDirectory: true,
-        presets: ["es2015"]
+        presets: ["es2015", "react"]
       }
+    },{ 
+      test: /\.jade$/, 
+      loader: "jade-react-loader?split=true" 
+    },{
+      test: /\.json$/,
+      loader: "json-loader" 
     }]
+  },
+
+  resolve: {
+    alias: {
+      "react": __dirname + "/node_modules/react/react.js",
+      "react-dom": __dirname + "/node_modules/react/lib/ReactDOM.js"
+    }
   }
-}
+};
 
