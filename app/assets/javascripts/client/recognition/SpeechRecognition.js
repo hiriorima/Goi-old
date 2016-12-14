@@ -42,6 +42,7 @@ function startSpeechRecognition(){
                     }
                     else
                     {
+                        SpeechRecognitionActionCreator.speechRecognition(String(results[i][0].transcript));
                         console.log("[途中経過] " + results[i][0].transcript);
                         flag_speech = 1;
                     }
