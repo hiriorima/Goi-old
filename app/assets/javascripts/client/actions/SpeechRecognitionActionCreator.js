@@ -1,14 +1,12 @@
 const
     ActionTypes = require('../constants/ActionTypes'),
-    AppDispatcher = require('../dispatcher/AppDispatcher');
+    AppDispatcher = require('../dispatcher/AppDispatcher'),
+    WebAPIUtils = require('../utils/WebAPIUtils');
 
 const SpeechRecognitionActionCreator = {
 
   speechRecognition : function ( text ){
-    AppDispatcher.dispatch({
-        type : ActionTypes.RECOGNITIONED,
-        text : text,
-      });
+      WebAPIUtils.getExtractedWords(text);
   },
 };
 

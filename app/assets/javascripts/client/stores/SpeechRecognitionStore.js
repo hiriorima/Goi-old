@@ -20,8 +20,16 @@ const SpeechRecognitionStore = Object.assign({}, EventEmitter.prototype, {
  },
 
  setWords : function(words){
-   _words.push(words);
-   this.emitChange();
+  let i;
+  for(i = 0; i < words[0].words.length; i++){
+   let word = words[0].words[i] 
+    if(_words.indexOf(word) == -1){
+      if(word.length <= 6){
+        _words.push(word);
+      }
+    }
+  }
+    this.emitChange();
  },
 
  emitChange : function(){
@@ -39,7 +47,7 @@ const SpeechRecognitionStore = Object.assign({}, EventEmitter.prototype, {
 SpeechRecognitionStore.dispatchToken = AppDispatcher.register(function( action ){
   switch( action.type ){
     case ActionTypes.RECOGNITIONED:
-    SpeechRecognitionStore.setWords(action.text);
+    SpeechRecognitionStore.setWords(action.words);
     break;
 
     default:
