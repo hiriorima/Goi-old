@@ -24,11 +24,9 @@ const SpeechRecognitionStore = Object.assign({}, EventEmitter.prototype, {
   for(i = 0; i < words[0].words.length; i++){
    let word = words[0].words[i] 
     if(_words.indexOf(word) == -1){
-      if(word.length <= 6){
         _words.push(word);
       }
     }
-  }
     this.emitChange();
  },
 
