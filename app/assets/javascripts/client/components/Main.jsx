@@ -1,11 +1,8 @@
 import React from'react';
-
 import{ Router, Route, DefaultRoute }from'react-router';
-
-import main from '../templates/Main.jade';
 import SpeechRecognition from'../recognition/SpeechRecognition';
-
 import SpeechRecognitionStore from'../stores/SpeechRecognitionStore';
+import WordElement from'../components/WordElement';
 
 class Main extends React.Component{
 
@@ -13,18 +10,26 @@ class Main extends React.Component{
     super(props);
     this.getStateFromStores = this.getStateFromStores.bind(this);
     this.state = this.getStateFromStores();
-    this.props = {};
     SpeechRecognition.startSpeechRecognition();
     this._onChange = this._onChange.bind(this);
   } 
 
   render(){
-    return main(Object.assign(
-         this,
-         this.state,
-         this.props,
-         { }));
-  }
+    const words = [];
+      for (let i in this.state.words){
+        words.push(
+          <WordElement
+            key = {i}
+            word = {this.state.words[i]} />
+        )
+      }
+
+    return (
+      <div className="words">
+        {words}
+      </div>
+   )
+ }
 
   getStateFromStores(){
     return {
