@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {render} from 'react-dom';
 
-import Main from './Main.react';
+import Main from './Main';
 
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 

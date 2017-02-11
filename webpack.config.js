@@ -11,16 +11,16 @@ module.exports = {
   },
   module: {
     loaders: [{
-      test: /\.js$/,
-      loader: "babel",
+      test: /\.jsx?$/,
+      loader: "babel-loader",
       exclude: /(node_modules)/,
       query: {
         cacheDirectory: true,
-        presets: ["es2015", "react"]
+        presets: ["react", "es2015"]
       }
     },{ 
-      test: /\.jade$/, 
-      loader: "jade-react-loader?split=true" 
+      test: /\.css$/, 
+      loader: "style-loader!css-loader" 
     },{
       test: /\.json$/,
       loader: "json-loader" 
@@ -28,10 +28,9 @@ module.exports = {
   },
 
   resolve: {
-    alias: {
-      "react": __dirname + "/node_modules/react/react.js",
-      "react-dom": __dirname + "/node_modules/react/lib/ReactDOM.js"
-    }
-  }
+    extensions: ["", ".js", ".jsx"],
+    root:[ __dirname + "/node_modules"],
+  },
+
 };
 
