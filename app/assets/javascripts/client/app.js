@@ -1,3 +1,3 @@
-require('./components/GoiApp.react.js');
+require('./components/GoiApp');
 
 
