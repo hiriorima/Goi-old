@@ -1,8 +1,8 @@
-import keyMirror from'keymirror';
+import keyMirror from 'keymirror';
 
 module.exports = keyMirror({
 
-RECOGNITION_START: null,
-RECOGNITION_STOP: null,
+    RECOGNITION_START: null,
+    RECOGNITION_STOP: null,
 
 });

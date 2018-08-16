@@ -2,6 +2,6 @@ const keyMirror = require('keymirror');
 
 module.exports = keyMirror({
 
-WORD_LIST_CHANGE: null,
+    WORD_LIST_CHANGE: null,
 
 });
